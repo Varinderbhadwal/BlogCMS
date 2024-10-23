@@ -1,6 +1,6 @@
 # BlogCMS
 
-Here’s a more in-depth description for your GitHub repository:
+![screenshot for Blog CMS by Varinder Pal Singh](https://github.com/Varinderbhadwal/BlogCMS/blob/main/BlogCMS_by_Varinder.jpeg)
 
 **CMS for Blogs** is a full-stack content management system (CMS) designed for managing and creating blogs, built using the **MERN stack** (MongoDB, Express.js, React.js, Node.js). This project enables users to register, authenticate securely, create and manage blog posts, upload images, and update personal profiles. Below is a detailed overview of its features and tech stack:
 
