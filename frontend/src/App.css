@@ -1,0 +1,15 @@
+#bloglist .col-8{
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 10px 0px lightgray;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+nav button{
+  margin: 0 10px;
+}
