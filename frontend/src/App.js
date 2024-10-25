@@ -67,7 +67,7 @@ function BlogList() {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/blogs').then((response) => {
+        axios.get('https://blogcms-3xag.onrender.com/blogs').then((response) => {
             setBlogs(response.data);
         });
     }, []);
@@ -81,7 +81,7 @@ function BlogList() {
                 {blogs.map((blog, index) => (
                 <div key={index}>
                     <hr></hr>
-                    {blog.image && <img src={`http://localhost:5000${blog.image}`} alt="Blog" width="100%" />}
+                    {blog.image && <img src={`https://blogcms-3xag.onrender.com/${blog.image}`} alt="Blog" width="100%" />}
                     <h2>{blog.title}</h2>
                     <p>{blog.content}</p>
                     <p>Author: {blog.author}</p>
@@ -175,7 +175,7 @@ function Profile() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:5000/profile', { headers: { Authorization: token } })
+        axios.get('https://blogcms-3xag.onrender.com/profile', { headers: { Authorization: token } })
             .then(response => setProfile(response.data));
     }, []);
 
@@ -185,7 +185,7 @@ function Profile() {
         formData.append('profileImage', file);
 
         const token = localStorage.getItem('token');
-        axios.post('http://localhost:5000/update-profile', formData, {
+        axios.post('https://blogcms-3xag.onrender.com/update-profile', formData, {
             headers: { Authorization: token },
         }).then((response) => {
             setProfile(prevState => ({
@@ -198,7 +198,7 @@ function Profile() {
     return (
         <div>
             <h1>{profile.username}</h1>
-            <img src={`http://localhost:5000${profile.profileImage}`} alt="Profile" width="200" />
+            <img src={`https://blogcms-3xag.onrender.com/${profile.profileImage}`} alt="Profile" width="200" />
             <form onSubmit={handleProfileUpdate}>
                 <input type="file" onChange={(e) => setFile(e.target.files[0])} />
                 <button type="submit">Update Profile Image</button>
@@ -221,7 +221,7 @@ function CreateBlog() {
 
       const token = localStorage.getItem('token');
 
-      axios.post('http://localhost:5000/create-blog', formDataToSend, {
+      axios.post('https://blogcms-3xag.onrender.com/create-blog', formDataToSend, {
           headers: { Authorization: token },
       })
       .then(() => navigate('/'));
