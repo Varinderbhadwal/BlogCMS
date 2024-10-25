@@ -17,7 +17,9 @@ app.use(cors());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/blogCMS', { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connect('mongodb://localhost:27017/blogCMS', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://varinderbhadwal420:0qlzDU9X1sRIFCqO@cluster0.n9io1.mongodb.net/blogCMS?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 // Schemas
 const UserSchema = new mongoose.Schema({
